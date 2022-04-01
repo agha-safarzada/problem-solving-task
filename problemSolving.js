@@ -1,12 +1,27 @@
-function count(string) {
-    let count = {};
-    string.split('').forEach(function(symbol) {
-        if (count[symbol]) {
-            count[symbol]++
+// function count(string) {
+//     let count = {};
+//     string.split('').forEach(function(symbol) {
+//         if (count[symbol]) {
+//             count[symbol]++
+//         } else {
+//             count[symbol] = 1;
+//         }
+//     });
+//     return count;
+// }
+// console.log(count('Salamm adim Agadir'));
+
+function partlyRev(text) {
+    let reverse = '';
+    text = text.split(' ');
+    text.forEach(word => {
+        if (word.length >= 5) {
+            reverse = reverse + (word.split('').reverse().join('')) + " ";
         } else {
-            count[symbol] = 1;
+            reverse = reverse + word + " ";
         }
     });
-    return count;
+    return reverse;
+
 }
-console.log(count('Salamm'))
+console.log(partlyRev('Seriously this is the last one'));
